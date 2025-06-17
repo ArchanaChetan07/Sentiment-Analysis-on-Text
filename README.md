@@ -14,7 +14,7 @@ The goal of this assignment is to understand how sentiment analysis works using 
 ├── positive-words.txt              # List of positive sentiment words
 ├── negative-words.txt              # List of negative sentiment words
 ├── tidytext_sentiments.txt         # (Optional) Additional sentiment dictionary
-└── README.md                       # Project documentation (you are here)
+└── README.md                       
 ```
 
 ---
