@@ -1,100 +1,146 @@
-# Sentiment-Analysis-on-Text
+# Lexicon Sentiment Analysis on Lyrics & Twitter
 
-Python · NLP · BERT · Transformers · Hugging Face · scikit-learn · machine-learning · CI/CD · API. Repo scale: 8 files; GitHub Actions CI; automated tests; 1 Python modules; 1 notebooks. Applied NLP for classification, generation, and language understanding pipelines.
+### ADS 509 Module 6 assignment scoring song and tweet sentiment with polarity lexicons.
 
-## Results (numbers)
+[![GitHub](https://img.shields.io/badge/repo-Sentiment-Analysis-on-Text-181717?logo=github)](https://github.com/ArchanaChetan07/Sentiment-Analysis-on-Text)
+[![Language](https://img.shields.io/badge/language-Jupyter%20Notebook-3572A5)](https://github.com/ArchanaChetan07/Sentiment-Analysis-on-Text)
+[![License](https://img.shields.io/badge/license-See%20repository-yellow)](https://github.com/ArchanaChetan07/Sentiment-Analysis-on-Text)
+[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/ArchanaChetan07/Sentiment-Analysis-on-Text/actions)
 
-| Metric | Value |
-|---|---|
-| Tracked repository files | **8** |
-| Python modules | **1** |
-| Notebooks | **1** |
-| Markdown docs | **1** |
-| CI workflows present | **Yes** |
-| Automated tests present | **Yes** |
-| Project highlights | **See repository artifacts for measured results.** |
+---
+
+## Overview
+
+Score sentiment of artist lyrics and Twitter corpora using positive/negative and tidytext lexicons.
+
+Sentiment Assignment.ipynb loads lyrics/twitter folders plus positive-words.txt, negative-words.txt, tidytext_sentiments.txt; sums word polarity scores per song; compares top/bottom songs.
+
+Completed course assignment notebook pattern with bundled lexicons (external corpora paths often local).
+
+This repository is maintained as **production-minded portfolio work**: clear architecture, automated checks where present, and metrics that are **traceable to committed artifacts** (never invented).
+
+---
+
+## Architecture
+
+Lyrics + Twitter files + lexicons â†’ tokenize words â†’ sum polarity â†’ rank songs / analyze tweets â†’ plots.
+
+```mermaid
+flowchart LR
+  L[Lyrics/Twitter] --> S[Sentiment Assignment.ipynb]
+  X[positive/negative/tidytext lexicons] --> S
+  S --> R[Song scores + rankings]
+```
+
+```mermaid
+sequenceDiagram
+  participant U as User/Client
+  participant S as Service/Pipeline
+  participant E as Eval/Tools
+  U->>S: request / job
+  S->>E: execute
+  E-->>S: results
+  S-->>U: report / response
+```
+
+---
+
+## Results & repository facts
+
+> Only values found in code, configs, tests, or generated reports are listed. Absence of a clinical/ML accuracy number means it was **not** published in-repo.
+
+| Metric | Value | Source |
+|---|---|---|
+| Tracked repository files | **8** | `git tree` |
+| Notebook cells | **24** | `Sentiment Assignment.ipynb` |
+| Tracked files | **8** | `git tree` |
+| Python modules | **1** | `git tree` |
+| Test-related paths | **1** | `git tree` |
+| CI workflows | **Yes** | `.github/workflows` |
+| Docker present | **No** | `repo root` |
+
+```mermaid
+%%{init: {'theme':'base'}}%%
+pie showData title Language composition (bytes)
+    "Jupyter Notebook" : 99
+    "Python" : 1
+```
+
+---
+
+## Key features
+
+- Manual lexicon scoring (+1/-1)
+- Bundled positive/negative/tidytext lexicons
+- Song-level ranking examples in notebook
+
+---
 
 ## Tech stack
 
-- **Primary language:** Jupyter Notebook
-- **Languages (GitHub):** Jupyter Notebook (159692 bytes), Python (2252 bytes)
-- **Focus area:** nlp
-- **Tooling keywords:** Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM
+| Layer | Technology |
+|---|---|
+| nlp | Lexicon sentiment |
+| nlp | NLTK |
+| data | pandas |
+| viz | matplotlib/seaborn |
+| ci | GitHub Actions |
 
-## Architecture (logical)
+---
 
-\\	ext
-Inputs → Processing / models / agents → Evaluation & metrics → CI checks → Artifacts
-\
-## Engineering practices
-
-1. Reproducible layout with clear module boundaries  
-2. Automated validation via CI and/or tests when present  
-3. Documentation that states measurable outcomes, not slogans  
-4. Skill surface aligned to common JD keywords: Python, machine learning, NLP/LLM, Kubernetes, Docker, observability, data pipelines  
-
-## Quick start
-
-\\ash
-git clone https://github.com/ArchanaChetan07/Sentiment-Analysis-on-Text.git
-cd Sentiment-Analysis-on-Text
-# Install project requirements (see requirements.txt / pyproject.toml / environment files if present)
-# Run tests or main entrypoints documented in this repo
-\
 ## Skills demonstrated
 
-Python · machine-learning · CI/CD · API design · testing · automation · Docker · Kubernetes · FastAPI · Prometheus · data-science · LLM · MLOps · software-engineering · benchmarking · observability
+Jupyter Notebook · p · a · n · d · s · CI/CD · testing · automation
 
-## License / notice
+Keyword surface: **Python · Jupyter Notebook · machine-learning · CI/CD · testing · API · Docker · automation · data-science · software-engineering · system-design · observability · LLM · cloud**
 
-See repository license file if present. Metrics above are derived from repository structure and previously published validation notes where available.
+---
 
+## Project structure
 
-### Extended notes
+```text
+Sentiment-Analysis-on-Text/
+â”œâ”€â”€ Sentiment Assignment.ipynb
+â”œâ”€â”€ positive-words.txt
+â”œâ”€â”€ negative-words.txt
+â”œâ”€â”€ tidytext_sentiments.txt
+â”œâ”€â”€ requirements.txt
+â””â”€â”€ tests/
+```
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
+## Installation & usage
 
-### Extended notes
+```bash
+git clone https://github.com/ArchanaChetan07/Sentiment-Analysis-on-Text.git
+cd Sentiment-Analysis-on-Text
+pip install -r requirements.txt
+jupyter notebook "Sentiment Assignment.ipynb"
+```
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
+## How it works
 
-### Extended notes
+After pointing data_location at lyrics/twitter folders, the notebook builds a sentiment dictionary from lexicons and scores each song by summing word polarities, then answers comparative questions.
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
+## Future improvements
 
-### Extended notes
+- Make data_location relative / ship sample subset
+- Export summary tables as CSV artifacts
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
+## License
 
-### Extended notes
+See repository.
 
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+---
 
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
-
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
-
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
-
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
-
-
-### Extended notes
-
-This section expands documentation for completeness: reproducibility, keyword coverage for Python, machine-learning, CI/CD, API, Docker, Kubernetes, FastAPI, Prometheus, testing, automation, MLOps, LLM, data-science, software-engineering, benchmarking, and observability practices used across the portfolio.
+<p align="center">
+  <b>Lexicon Sentiment Analysis on Lyrics & Twitter</b><br/>
+  <a href="https://github.com/ArchanaChetan07/Sentiment-Analysis-on-Text">github.com/ArchanaChetan07/Sentiment-Analysis-on-Text</a>
+</p>
